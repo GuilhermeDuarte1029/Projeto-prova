@@ -3,47 +3,20 @@ package prova1;
 public class Sistema {
 
 	public String nome;
-	public int somaPontos;
+	public int contador;
+	public int somaPontos = 0;
 	String[] x = new String[10];
 	int[] numero = new int[10];
-	int[] gabarito = { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+	int[] gabarito = { 3, 4, 4, 4, 1, 4, 4, 4, 1, 1, };
 	String[][] alternativas = new String[10][4];
 
 	public int nota() {
 
-		if (numero[0] == gabarito[0]) {
-			this.somaPontos += 1;
-		}
+		for (int i = 0; i < 10; i++) {
 
-		if (numero[1] == gabarito[1]) {
-			this.somaPontos += 1;
-		}
-
-		if (numero[2] == gabarito[2]) {
-			this.somaPontos += 1;
-		}
-
-		if (numero[3] == gabarito[3]) {
-			this.somaPontos += 1;
-		}
-
-		if (numero[4] == gabarito[4]) {
-			this.somaPontos += 1;
-		}
-		if (numero[5] == gabarito[5]) {
-			this.somaPontos += 1;
-		}
-		if (numero[6] == gabarito[6]) {
-			this.somaPontos += 1;
-		}
-		if (numero[7] == gabarito[7]) {
-			this.somaPontos += 1;
-		}
-		if (numero[8] == gabarito[8]) {
-			this.somaPontos += 1;
-		}
-		if (numero[9] == gabarito[9]) {
-			this.somaPontos += 1;
+			if (numero[i] == gabarito[i]) {
+				this.somaPontos = this.somaPontos + 1;
+			}
 		}
 
 		return this.somaPontos;
@@ -52,13 +25,12 @@ public class Sistema {
 
 	public String resultado() {
 
-		if (somaPontos < 7) {
-			return "REPROVADO";
+		if (nota() < 7) {
+			return "SITUAÇÃO DO ALUNO: REPROVADO\n";
 		} else {
-			return "APROVADO";
+			return "SITUAÇÃO DO ALUNO: APROVADO\n";
 		}
 
 	}
-
 
 }
